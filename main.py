@@ -12,7 +12,7 @@ app.config['BOOTSTRAP_SERVE_LOCAL'] = True
 Bootstrap(app)
 
 class NameForm(FlaskForm):
-    key    = StringField('Judul Lagu : ', validators=[Required()])
+    key    = StringField('Judul Lagu : ')
     submit = SubmitField('Submit')
 
 @app.route('/', methods=['GET', 'POST'])
@@ -53,7 +53,7 @@ def index():
     return render_template('index.html', form=form, message=message, title=title, lyrics=lirik)
 
 # running server
-if __name__ == '__main__':
-    app.run(port=80)
+# if __name__ == '__main__':
+#     app.run(port=80)
     # app.run(host="192.168.43.2", port=5000)
     # app.run(host="192.168.43.2", port=5000, debug=True)
